@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-image OCR with Tesseract.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>OCR using Tesseract.js for Multiple Images</h1>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <button id="processButton">Process Images</button>
+    <div id="output"></div>
+
+    <!-- Include Tesseract.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
