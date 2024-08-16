@@ -17,7 +17,7 @@ document.getElementById("processButton").addEventListener("click", function () {
             .then(({ data: { text } }) => {
                const imageOutput = document.createElement("div");
                imageOutput.className = "image-output";
-               imageOutput.textContent = `Text from ${file.name}:\n${text}`;
+               imageOutput.textContent = `Text from ${file.name}:\n\n${text}`;
                outputDiv.appendChild(imageOutput);
             })
             .catch((err) => {
