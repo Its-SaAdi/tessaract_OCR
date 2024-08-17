@@ -11,7 +11,7 @@ document.getElementById("processButton").addEventListener("click", function () {
    Array.from(fileInput.files).forEach((file) => {
       const reader = new FileReader();
       reader.onload = function (event) {
-         Tesseract.recognize(event.target.result, "eng", {
+         Tesseract.recognize(event.target.result, 'eng+urd+ara', {
             logger: (info) => console.log(info), // Log progress
          })
             .then(({ data: { text } }) => {

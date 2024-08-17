@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <label for="fileInput">Choose one file</label>
+    <input type="file" name="file" id="fileInput" multiple>
+    <button type="submit" id="submitBtn">Submit</button>
+
+    <script>
+        let submitBtn = document.querySelector("#submitBtn");
+        let fileInput = document.querySelector("#fileInput");
+        submitBtn.addEventListener('click', (e) => {
+            let values = fileInput.files;
+            console.log(Array.from(values));
+            
+            // if (value !== "") {
+            //     console.log(value);
+            // } else {
+            //     console.log("No file selected");
+            // }
+            // let value = fileInput.value;
+            // if (value !== "") {
+            //     console.log(value);
+            // } else {
+            //     console.log("No file selected");
+            // }
+        });
+    </script>
+</body>
+</html>
