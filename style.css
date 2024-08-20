@@ -1,7 +1,7 @@
 #output {
     margin-top: 20px;
     white-space: pre-wrap;
-    font-family: monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .image-output {
     margin-bottom: 20px;
