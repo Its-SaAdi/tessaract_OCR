@@ -1,5 +1,6 @@
 document.getElementById("processButton").addEventListener("click", function () {
    const fileInput = document.getElementById("fileInput");
+   const langInput = document.getElementById("lang");
    const outputDiv = document.getElementById("output");
    outputDiv.innerHTML = ""; // Clear previous output
 
@@ -11,13 +12,18 @@ document.getElementById("processButton").addEventListener("click", function () {
    Array.from(fileInput.files).forEach((file) => {
       const reader = new FileReader();
       reader.onload = function (event) {
-         Tesseract.recognize(event.target.result, 'eng+urd+ara', {
+         Tesseract.recognize(event.target.result, langInput.value, {
             logger: (info) => console.log(info), // Log progress
          })
             .then(({ data: { text } }) => {
                const imageOutput = document.createElement("div");
+               const heading = document.createElement("p");
+               const para = document.createElement('p');
                imageOutput.className = "image-output";
-               imageOutput.textContent = `Text from ${file.name}:\n\n${text}`;
+               heading.className = "bold";
+               heading.textContent = `Text from ${file.name}:\n\n`;
+               para.textContent = text;
+               imageOutput.append(heading, para);
                outputDiv.appendChild(imageOutput);
             })
             .catch((err) => {
